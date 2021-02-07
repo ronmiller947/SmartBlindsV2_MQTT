@@ -143,7 +143,7 @@ int currentInterval;
 const int PUBLISH_INTERVAL = 300;
 
 // Servo Control Variable
-const int MIN_PULSE = 500;
+const int MIN_PULSE = 400;
 const int MAX_PULSE = 2500;
 const int MIN_ANGLE = 0;
 const int MAX_ANGLE = 180;
@@ -177,7 +177,7 @@ void setup()
   client.setCallback(callback);
 
   // Connect Servo
-  myservo.attach(SERVO_PIN);
+  myservo.attach(SERVO_PIN, MIN_PULSE, MAX_PULSE);
 
   // Setup Update Server
   MDNS.begin(host);
